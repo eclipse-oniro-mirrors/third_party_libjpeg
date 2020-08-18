@@ -8,7 +8,7 @@ ROOT_DIR=$(dirname "$0")
 git checkout -- configure
 git apply huawei_libjpeg_patch1.patch
 
-./configure CC=$ROOT_DIR/../../prebuilts/gcc/linux-x86/arm/arm-linux-ohoseabi-gcc/bin/arm-linux-ohoseabi-gcc --host=arm-linux
+./configure CFLAGS='-fstack-protector-strong -Wl,-z,relro,-z,now' CC=$ROOT_DIR/../../prebuilts/gcc/linux-x86/arm/arm-linux-ohoseabi-gcc/bin/arm-linux-ohoseabi-gcc --host=arm-linux
 
 make clean
 make -j
