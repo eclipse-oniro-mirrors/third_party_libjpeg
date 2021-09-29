@@ -72,6 +72,12 @@ Note:If the text contains special characters, please escape them according to th
                 <filteritem type="filename" name="makeproj.mac" desc="project files for the libjpeg library"/>
                 <filteritem type="filename" name="depcomp" desc="Automatic dependency tracking file"/>
             </filefilter>
+            <filefilter name="binaryFileTypePolicyFilter" desc="Filters for binary file policies">
+                <filteritem type="filename" name="make*.v16" desc="Project file,not to check"/>
+                <filteritem type="filename" name="make*.vc6" desc="Project file,not to check"/>
+                <filteritem type="filename" name="test*.jpg" desc="Project file,not to check"/>
+                <filteritem type="filename" name="testimg.*" desc="Project file,not to check"/>
+            </filefilter>
         </filefilterlist>
         <licensematcherlist>
             <licensematcher name="Libjpeg License (JPEG License)" desc="libjpeg license header.">
