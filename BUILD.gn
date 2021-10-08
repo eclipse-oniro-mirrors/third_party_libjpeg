@@ -70,7 +70,11 @@ libjpeg_source = [
 
 if (defined(ohos_lite)) {
   lite_library("libjpeg") {
-    target_type = "shared_library"
+    if (ohos_kernel_type == "liteos_m") {
+      target_type = "static_library"
+    } else {
+      target_type = "shared_library"
+    }
     sources = libjpeg_source
 
     public_configs = [ ":libjpeg_config" ]
