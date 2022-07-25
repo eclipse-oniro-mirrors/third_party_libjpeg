@@ -72,6 +72,13 @@ if (defined(ohos_lite)) {
   lite_library("libjpeg") {
     if (ohos_kernel_type == "liteos_m") {
       target_type = "static_library"
+      if (board_toolchain_type == "iccarm") {
+        cflags = [
+          "--diag_suppress",
+          "Pe188,Pa089",
+        ]
+        cflags_cc = cflags
+      }
     } else {
       target_type = "shared_library"
     }
